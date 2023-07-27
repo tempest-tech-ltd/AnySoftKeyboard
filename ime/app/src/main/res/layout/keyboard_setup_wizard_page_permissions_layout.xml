@@ -69,4 +69,16 @@
         android:padding="4dp"
         android:text="@string/read_more_about_permissions" />
 
+    <!--  Added by AppStudio  -->
+    <TextView
+        android:id="@+id/open_search_frag"
+        style="@style/Ask.Text.Link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/transparent_click_feedback_background"
+        android:padding="4dp"
+        android:text="Go to Search" />
+    <!--  Added by AppStudio  -->
+
 </LinearLayout>

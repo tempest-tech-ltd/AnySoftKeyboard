@@ -134,6 +134,14 @@ dependencies {
 
     implementation 'androidx.multidex:multidex:2.0.1'
 
+    /* Added by AppStudio **/
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.7.20"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.7.20"
+    implementation 'androidx.core:core-ktx:1.6.0'
+    /* Added by AppStudio **/
+
     testImplementation project(path: ':ime:base-test')
     testImplementation 'com.github.triplet.simpleprovider:simpleprovider:1.1.0'
     testImplementation 'androidx.test.ext:junit:1.1.5'

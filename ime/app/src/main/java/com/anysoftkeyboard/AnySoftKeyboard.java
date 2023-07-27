@@ -57,6 +57,7 @@ import com.anysoftkeyboard.rx.GenericOnError;
 import com.anysoftkeyboard.ui.VoiceInputNotInstalledActivity;
 import com.anysoftkeyboard.ui.dev.DevStripActionProvider;
 import com.anysoftkeyboard.ui.dev.DeveloperUtils;
+import com.anysoftkeyboard.ui.dev.SearchAppActionProvider;
 import com.anysoftkeyboard.ui.settings.MainSettingsActivity;
 import com.anysoftkeyboard.utils.IMEUtil;
 import com.google.android.voiceime.VoiceRecognitionTrigger;
@@ -81,10 +82,11 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
   @NonNull private final SparseArrayCompat<int[]> mSpecialWrapCharacters;
 
   private DevStripActionProvider mDevToolsAction;
+  private SearchAppActionProvider mSearchAppAction;
   private CondenseType mPrefKeyboardInCondensedLandscapeMode = CondenseType.None;
   private CondenseType mPrefKeyboardInCondensedPortraitMode = CondenseType.None;
   private CondenseType mKeyboardInCondensedMode = CondenseType.None;
-  private InputMethodManager mInputMethodManager;
+  public InputMethodManager mInputMethodManager;
   private VoiceRecognitionTrigger mVoiceRecognitionTrigger;
   private View mFullScreenExtractView;
   private EditText mFullScreenExtractTextView;
@@ -230,6 +232,12 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
     mVoiceRecognitionTrigger = new VoiceRecognitionTrigger(this);
 
     mDevToolsAction = new DevStripActionProvider(this);
+
+
+    /* Added by AppStudio **/
+    mSearchAppAction = new SearchAppActionProvider(this,this );
+    /* Added by AppStudio **/
+
   }
 
   @Override
@@ -284,6 +292,9 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
     if (BuildConfig.DEBUG) {
       getInputViewContainer().addStripAction(mDevToolsAction, false);
     }
+    /* Added by AppStudio **/
+    getInputViewContainer().addStripAction(mSearchAppAction, false);
+    /* Added by AppStudio **/
   }
 
   @Override
@@ -304,6 +315,7 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
     if (BuildConfig.DEBUG) {
       getInputViewContainer().removeStripAction(mDevToolsAction);
     }
+    getInputViewContainer().removeStripAction(mSearchAppAction);
   }
 
   @Override

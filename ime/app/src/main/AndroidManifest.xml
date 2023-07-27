@@ -20,6 +20,12 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- Required by Android 13 (API level 33) -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <!--  Added by AppStudio  -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <!--  Added by AppStudio  -->
+
     <!-- currently, only support touch and fake-touch devices -->
     <uses-feature android:name="android.hardware.faketouch" />
     <uses-feature
@@ -91,6 +97,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:theme="@style/Theme.AskApp"
             android:windowSoftInputMode="adjustPan" />
+
+        <!--  Added by AppStudio  -->
+        <activity
+            android:name="appstudio.search.SearchActivity"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Search"
+            android:launchMode="singleTask"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:theme="@style/Theme.AskApp"
+            android:windowSoftInputMode="adjustPan" />
+        <!--  Added by AppStudio  -->
+
         <activity
             android:name="com.anysoftkeyboard.ui.settings.setup.SetupWizardActivity"
             android:icon="@mipmap/ic_launcher"

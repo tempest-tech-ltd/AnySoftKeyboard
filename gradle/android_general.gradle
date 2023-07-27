@@ -3,6 +3,11 @@ apply from: "${rootDir}/gradle/errorprone.gradle"
 apply from: "${rootDir}/gradle/checkstyle.gradle"
 apply from: "${rootDir}/gradle/spotless.gradle"
 
+/* Added by AppStudio **/
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+/* Added by AppStudio **/
+
 android {
     lint {
         checkDependencies true
