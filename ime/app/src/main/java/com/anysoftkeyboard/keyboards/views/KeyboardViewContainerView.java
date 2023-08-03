@@ -7,15 +7,21 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+
 import com.anysoftkeyboard.ime.InputViewActionsProvider;
 import com.anysoftkeyboard.ime.InputViewBinder;
 import com.anysoftkeyboard.overlay.OverlayData;
 import com.anysoftkeyboard.theme.KeyboardTheme;
+import com.anysoftkeyboard.ui.dev.SearchAppActionProvider;
 import com.menny.android.anysoftkeyboard.R;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import appstudio.appbar.SearchKeyboardAppView;
 
 public class KeyboardViewContainerView extends ViewGroup implements ThemeableChild {
 
@@ -31,6 +37,12 @@ public class KeyboardViewContainerView extends ViewGroup implements ThemeableChi
   private KeyboardTheme mKeyboardTheme;
   private OverlayData mOverlayData = new OverlayData();
   private final Rect mExtraPaddingToMainKeyboard = new Rect();
+
+  /** Added by Tempest **/
+  private SearchKeyboardAppView mSearchView;
+  private View mSearchIconView;
+  private boolean mShowSearch = false;
+  /** Added by Tempest **/
 
   public KeyboardViewContainerView(Context context) {
     super(context);
@@ -95,6 +107,62 @@ public class KeyboardViewContainerView extends ViewGroup implements ThemeableChi
     }
     return false;
   }
+
+  /** Added by Tempest **/
+  public void setSearchVisibility(boolean visible) {
+    if (mSearchView != null) {
+      mSearchView.setVisibility(visible ? VISIBLE : GONE);
+      invalidate();
+    }
+  }
+
+  public void setSearchIconVisibility(boolean visible) {
+    if (mSearchIconView != null) {
+      mShowSearch = visible;
+      mSearchIconView.setVisibility(visible ? VISIBLE : GONE);
+      invalidate();
+    }
+  }
+
+  public void addSearchAppIcon(Context context) {
+    SearchAppActionProvider provider = new SearchAppActionProvider(context);
+
+    mSearchIconView = provider.inflateActionView(this);
+    mSearchIconView.setOnClickListener(v -> {
+      addSearchView(context);
+      setSearchIconVisibility(false);
+    });
+    addView(mSearchIconView, 0);
+    invalidate();
+  }
+
+  public SearchKeyboardAppView getSearchView(Context context) {
+    return mSearchView;
+  }
+
+  public void addSearchView(Context context) {
+    mSearchView = new SearchKeyboardAppView(context, null, null);
+    addView(mSearchView, 0);
+    invalidate();
+  }
+
+  public void removeSearchView() {
+    if (mSearchView != null) {
+      removeView(mSearchView);
+      mSearchView.onAppClosed();
+      mSearchView = null;
+      invalidate();
+    }
+  }
+
+  public void removeSearchIcon() {
+    if (mSearchIconView != null) {
+      removeView(mSearchIconView);
+      mSearchIconView = null;
+      invalidate();
+    }
+  }
+  /** Added by Tempest **/
 
   public void setActionsStripVisibility(boolean requestedVisibility) {
     mShowActionStrip = requestedVisibility;

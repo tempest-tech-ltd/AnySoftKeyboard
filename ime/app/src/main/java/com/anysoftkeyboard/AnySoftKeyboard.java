@@ -57,7 +57,6 @@ import com.anysoftkeyboard.rx.GenericOnError;
 import com.anysoftkeyboard.ui.VoiceInputNotInstalledActivity;
 import com.anysoftkeyboard.ui.dev.DevStripActionProvider;
 import com.anysoftkeyboard.ui.dev.DeveloperUtils;
-import com.anysoftkeyboard.ui.dev.SearchAppActionProvider;
 import com.anysoftkeyboard.ui.settings.MainSettingsActivity;
 import com.anysoftkeyboard.utils.IMEUtil;
 import com.google.android.voiceime.VoiceRecognitionTrigger;
@@ -82,7 +81,6 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
   @NonNull private final SparseArrayCompat<int[]> mSpecialWrapCharacters;
 
   private DevStripActionProvider mDevToolsAction;
-  private SearchAppActionProvider mSearchAppAction;
   private CondenseType mPrefKeyboardInCondensedLandscapeMode = CondenseType.None;
   private CondenseType mPrefKeyboardInCondensedPortraitMode = CondenseType.None;
   private CondenseType mKeyboardInCondensedMode = CondenseType.None;
@@ -233,11 +231,6 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
 
     mDevToolsAction = new DevStripActionProvider(this);
 
-
-    /* Added by AppStudio **/
-    mSearchAppAction = new SearchAppActionProvider(this,this );
-    /* Added by AppStudio **/
-
   }
 
   @Override
@@ -289,12 +282,12 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
 
     updateShiftStateNow();
 
-    if (BuildConfig.DEBUG) {
-      getInputViewContainer().addStripAction(mDevToolsAction, false);
-    }
-    /* Added by AppStudio **/
-    getInputViewContainer().addStripAction(mSearchAppAction, false);
-    /* Added by AppStudio **/
+//      Tempest adds search icon
+//    if (BuildConfig.DEBUG) {
+//      getInputViewContainer().addStripAction(mDevToolsAction, false);
+//    }
+
+    getInputViewContainer().addSearchAppIcon(this);
   }
 
   @Override
@@ -312,10 +305,15 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
     super.onFinishInputView(finishingInput);
 
     getInputView().resetInputView();
-    if (BuildConfig.DEBUG) {
-      getInputViewContainer().removeStripAction(mDevToolsAction);
-    }
-    getInputViewContainer().removeStripAction(mSearchAppAction);
+
+
+    // Tempest remove search views
+//    if (BuildConfig.DEBUG) {
+//      getInputViewContainer().removeStripAction(mDevToolsAction);
+//    }
+    getInputViewContainer().removeSearchView();
+    getInputViewContainer().removeSearchIcon();
+
   }
 
   @Override
@@ -1244,7 +1242,8 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
         },
         new GeneralDialogController.DialogPresenter() {
           @Override
-          public void beforeDialogShown(@NonNull AlertDialog dialog, @Nullable Object data) {}
+          public void beforeDialogShown(@NonNull AlertDialog dialog, @Nullable Object data) {
+          }
 
           @Override
           public void onSetupDialogRequired(

@@ -6,37 +6,28 @@ import android.content.Intent
 import android.net.Uri
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import com.menny.android.anysoftkeyboard.R
 
-class SearchAppView(
+class SearchKeyboardAppView(
     context: Context,
     attrs: AttributeSet? = null
-) : AppView(context, attrs) {
+) : AppView(context, attrs), AppView.KeyboardAppListener {
 
     override val icon = R.drawable.ic_action_search
     val searchBar: EditText
     private val goButton: ImageButton
 
-    override var onShow: (() -> Unit)? = {
-        this.visibility = View.VISIBLE
-
-    }
-
     init {
-        val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(R.layout.app_view, this, true)
         searchBar = view.findViewById(R.id.searchBar)
-
-//        searchBar.setOnFocusChangeListener { v, hasFocus -> }
-
         goButton = view.findViewById(R.id.goButton)
         setupViews()
-
     }
 
     private fun setupViews() {
@@ -60,5 +51,12 @@ class SearchAppView(
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(context, "Unable to open browser", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onAppOpened(parent: ViewGroup) {
+        parent.addView(this, 0)
+    }
+
+    override fun onAppClosed() {
     }
 }

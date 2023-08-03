@@ -3,10 +3,10 @@ apply from: "${rootDir}/gradle/errorprone.gradle"
 apply from: "${rootDir}/gradle/checkstyle.gradle"
 apply from: "${rootDir}/gradle/spotless.gradle"
 
-/* Added by AppStudio **/
+/* Added by Tempest **/
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-/* Added by AppStudio **/
+/* Added by Tempest **/
 
 android {
     lint {

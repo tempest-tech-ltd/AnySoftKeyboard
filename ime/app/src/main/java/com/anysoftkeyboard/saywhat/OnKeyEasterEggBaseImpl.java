@@ -66,7 +66,8 @@ class OnKeyEasterEggBaseImpl implements OnKey, OnVisible {
 
   @Override
   public void onHidden(PublicNotices ime, AnyKeyboard keyboard) {
-    ime.getInputViewContainer().removeStripAction(mSuggestionAction);
+    //  Tempest
+//    ime.getInputViewContainer().removeStripAction(mSuggestionAction);
   }
 
   private Paint adjustPaint(Paint paint, AnyKeyboardViewWithExtraDraw ime, Float fraction) {

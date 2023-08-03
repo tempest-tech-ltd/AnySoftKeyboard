@@ -11,39 +11,33 @@ import com.anysoftkeyboard.AnySoftKeyboard;
 import com.anysoftkeyboard.keyboards.views.KeyboardViewContainerView;
 import com.menny.android.anysoftkeyboard.R;
 
-import net.evendanan.pixel.GeneralDialogController;
-
-import appstudio.appbar.SearchAppView;
+import appstudio.appbar.SearchKeyboardAppView;
 
 
 public class SearchAppActionProvider implements KeyboardViewContainerView.StripActionProvider {
     @NonNull
     private final Context mContext;
-    private final AnySoftKeyboard mAnySoftKeyboard;
+    private SearchKeyboardAppView mSearchAppView;
 
-    public SearchAppActionProvider(@NonNull Context context, AnySoftKeyboard anySoftKeyboard) {
+    public SearchAppActionProvider(@NonNull Context context) {
         mContext = context.getApplicationContext();
-        mAnySoftKeyboard = anySoftKeyboard;
     }
 
     @Override
     public @NonNull View inflateActionView(@NonNull ViewGroup parent) {
         View root = LayoutInflater.from(mContext).inflate(R.layout.app_item, parent, false);
-        root.setOnClickListener(v -> startSearchApp(parent));//
+        root.setOnClickListener(v -> startSearchApp(parent));
         return root;
     }
 
     private void startSearchApp(@NonNull ViewGroup parent) {
 
-        SearchAppView searchApp = new SearchAppView(mContext, null);
-        parent.addView(searchApp, 0);
-
-        // WIP
-//        GeneralDialogController dialogController = mAnySoftKeyboard.mGeneralDialogController;
-//        dialogController.showSearchDialog();
+        mSearchAppView = new SearchKeyboardAppView(mContext, null,null);
+        mSearchAppView.onAppOpened(parent);
     }
 
     @Override
     public void onRemoved() {
+        mSearchAppView.onAppClosed();
     }
 }

@@ -21,10 +21,10 @@
     <!-- Required by Android 13 (API level 33) -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
-    <!--  Added by AppStudio  -->
+    <!--  Added by Tempest  -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <!--  Added by AppStudio  -->
+    <!--  Added by Tempest  -->
 
     <!-- currently, only support touch and fake-touch devices -->
     <uses-feature android:name="android.hardware.faketouch" />
@@ -98,16 +98,16 @@
             android:theme="@style/Theme.AskApp"
             android:windowSoftInputMode="adjustPan" />
 
-        <!--  Added by AppStudio  -->
+        <!--  Added by Tempest  -->
         <activity
             android:name="appstudio.search.SearchActivity"
             android:icon="@mipmap/ic_launcher"
-            android:label="Search"
+            android:label="Example Activity"
             android:launchMode="singleTask"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:theme="@style/Theme.AskApp"
             android:windowSoftInputMode="adjustPan" />
-        <!--  Added by AppStudio  -->
+        <!--  Added by Tempest  -->
 
         <activity
             android:name="com.anysoftkeyboard.ui.settings.setup.SetupWizardActivity"

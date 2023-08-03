@@ -32,9 +32,9 @@ public class WizardPermissionsFragment extends WizardPageBaseFragment
   @Override
   public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
-    /* Added by AppStudio **/
+    /* Added by Tempest **/
     view.findViewById(R.id.open_search_frag).setOnClickListener(this);
-    /* Added by AppStudio **/
+    /* Added by Tempest **/
     view.findViewById(R.id.ask_for_permissions_action).setOnClickListener(this);
     mStateIcon.setOnClickListener(this);
     view.findViewById(R.id.disable_contacts_dictionary).setOnClickListener(this);
@@ -81,7 +81,7 @@ public class WizardPermissionsFragment extends WizardPageBaseFragment
     if (activity == null) return;
 
     switch (v.getId()) {
-      /* Added by AppStudio **/
+      /* Added by Tempest **/
       case R.id.open_search_frag:
         Intent intent = new Intent(requireContext(), SearchActivity.class);
         intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -91,7 +91,7 @@ public class WizardPermissionsFragment extends WizardPageBaseFragment
           Toast.makeText(requireContext(), "Unable to open search", Toast.LENGTH_SHORT).show();
         }
         break;
-        /* Added by AppStudio **/
+        /* Added by Tempest **/
       case R.id.ask_for_permissions_action:
       case R.id.step_state_icon:
         enableContactsDictionary();
