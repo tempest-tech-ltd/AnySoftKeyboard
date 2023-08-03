@@ -99,7 +99,8 @@ public abstract class AnySoftKeyboardInlineSuggestions extends AnySoftKeyboardSu
 
     if (inlineSuggestions.size() > 0) {
       mInlineSuggestionAction.onNewSuggestions(inlineSuggestions);
-      getInputViewContainer().addStripAction(mInlineSuggestionAction, true);
+        // Tempest do not show action item
+//      getInputViewContainer().addStripAction(mInlineSuggestionAction, true);
       getInputViewContainer().setActionsStripVisibility(true);
     }
 
@@ -107,7 +108,8 @@ public abstract class AnySoftKeyboardInlineSuggestions extends AnySoftKeyboardSu
   }
 
   private void removeActionStrip() {
-    getInputViewContainer().removeStripAction(mInlineSuggestionAction);
+    // Tempest do not show action item
+//    getInputViewContainer().removeStripAction(mInlineSuggestionAction);
   }
 
   private boolean cleanUpInlineLayouts(boolean reshowStandardKeyboard) {

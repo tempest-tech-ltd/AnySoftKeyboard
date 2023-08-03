@@ -112,7 +112,8 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
 
   @Override
   public void onFinishInputView(boolean finishInput) {
-    getInputViewContainer().removeStripAction(mClearLastGestureAction);
+        // Tempest do not show action item
+//    getInputViewContainer().removeStripAction(mClearLastGestureAction);
 
     super.onFinishInputView(finishInput);
   }

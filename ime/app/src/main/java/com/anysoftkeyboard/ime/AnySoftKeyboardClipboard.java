@@ -198,18 +198,20 @@ public abstract class AnySoftKeyboardClipboard extends AnySoftKeyboardSwipeListe
       // this method could be called before the IM view was created, but the
       // service already alive.
       var inputViewContainer = getInputViewContainer();
-      if (inputViewContainer != null) {
-        inputViewContainer.removeStripAction(mSuggestionClipboardEntry);
-      }
+        // Tempest do not show action item
+//      if (inputViewContainer != null) {
+//        inputViewContainer.removeStripAction(mSuggestionClipboardEntry);
+//      }
     } else {
       mLastSyncedClipboardEntry = clipboardEntry;
       EditorInfo currentInputEditorInfo = getCurrentInputEditorInfo();
       mLastSyncedClipboardEntryInSecureInput = isTextPassword(currentInputEditorInfo);
       mLastSyncedClipboardEntryTime = SystemClock.uptimeMillis();
       // if we already showing the view, we want to update it contents
-      if (isInputViewShown()) {
-        showClipboardActionIcon(currentInputEditorInfo);
-      }
+      // Tempest do not show action item
+//      if (isInputViewShown()) {
+//        showClipboardActionIcon(currentInputEditorInfo);
+//      }
     }
   }
 
@@ -228,10 +230,11 @@ public abstract class AnySoftKeyboardClipboard extends AnySoftKeyboardSwipeListe
     final long startTime = mLastSyncedClipboardEntryTime;
     if (startTime + MAX_TIME_TO_SHOW_SYNCED_CLIPBOARD_HINT > now
         && !TextUtils.isEmpty(mLastSyncedClipboardEntry)) {
-      showClipboardActionIcon(info);
-      if (startTime + MAX_TIME_TO_SHOW_SYNCED_CLIPBOARD_ENTRY <= now && !restarting) {
-        mSuggestionClipboardEntry.setAsHint(true);
-      }
+      // Tempest do not show action item
+//      showClipboardActionIcon(info);
+//      if (startTime + MAX_TIME_TO_SHOW_SYNCED_CLIPBOARD_ENTRY <= now && !restarting) {
+//        mSuggestionClipboardEntry.setAsHint(true);
+//      }
     }
   }
 
@@ -254,7 +257,8 @@ public abstract class AnySoftKeyboardClipboard extends AnySoftKeyboardSwipeListe
     if (mSuggestionClipboardEntry.isVisible()) {
       final long now = SystemClock.uptimeMillis();
       if (mLastSyncedClipboardEntryTime + MAX_TIME_TO_SHOW_SYNCED_CLIPBOARD_HINT <= now) {
-        getInputViewContainer().removeStripAction(mSuggestionClipboardEntry);
+        // Tempest do not show action item
+//        getInputViewContainer().removeStripAction(mSuggestionClipboardEntry);
       } else {
         mSuggestionClipboardEntry.setAsHint(false);
       }
@@ -265,7 +269,8 @@ public abstract class AnySoftKeyboardClipboard extends AnySoftKeyboardSwipeListe
   @Override
   public void onFinishInputView(boolean finishingInput) {
     super.onFinishInputView(finishingInput);
-    getInputViewContainer().removeStripAction(mSuggestionClipboardEntry);
+    // Tempest do not show action item
+//    getInputViewContainer().removeStripAction(mSuggestionClipboardEntry);
   }
 
   private void showAllClipboardEntries(Keyboard.Key key) {

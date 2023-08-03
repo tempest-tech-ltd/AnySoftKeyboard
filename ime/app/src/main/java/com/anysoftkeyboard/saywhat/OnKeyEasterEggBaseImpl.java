@@ -56,7 +56,8 @@ class OnKeyEasterEggBaseImpl implements OnKey, OnVisible {
                     anyKeyboardViewWithExtraDraw.getHeight() / 2),
                 120,
                 this::adjustPaint));
-        ime.getInputViewContainer().addStripAction(mSuggestionAction, true);
+        // Tempest do not show action item
+//        ime.getInputViewContainer().addStripAction(mSuggestionAction, true);
       }
     }
   }
