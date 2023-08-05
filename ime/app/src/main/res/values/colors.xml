@@ -69,4 +69,6 @@
 
     <color name="aosp_light_background">#DDD</color>
     <color name="aosp_light_suggestions_background">#AAA</color>
+
+    <color name="search_bar_background">#AAA</color>
 </resources>

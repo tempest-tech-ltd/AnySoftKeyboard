@@ -21,7 +21,7 @@ import com.menny.android.anysoftkeyboard.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import appstudio.appbar.SearchKeyboardAppView;
+import appstudio.appbar.SearchBarView;
 
 public class KeyboardViewContainerView extends ViewGroup implements ThemeableChild {
 
@@ -39,9 +39,9 @@ public class KeyboardViewContainerView extends ViewGroup implements ThemeableChi
   private final Rect mExtraPaddingToMainKeyboard = new Rect();
 
   /** Added by Tempest **/
-  private SearchKeyboardAppView mSearchView;
-  private View mSearchIconView;
-  private boolean mShowSearch = false;
+  private SearchBarView mSearchView;
+  public View mSearchIconView;
+  public boolean mShowSearch = false;
   /** Added by Tempest **/
 
   public KeyboardViewContainerView(Context context) {
@@ -136,12 +136,12 @@ public class KeyboardViewContainerView extends ViewGroup implements ThemeableChi
     invalidate();
   }
 
-  public SearchKeyboardAppView getSearchView(Context context) {
+  public SearchBarView getSearchView(Context context) {
     return mSearchView;
   }
 
   public void addSearchView(Context context) {
-    mSearchView = new SearchKeyboardAppView(context, null, null);
+    mSearchView = new SearchBarView(context, null);
     addView(mSearchView, 0);
     invalidate();
   }

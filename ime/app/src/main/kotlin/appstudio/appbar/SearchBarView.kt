@@ -13,25 +13,23 @@ import android.widget.ImageButton
 import android.widget.Toast
 import com.menny.android.anysoftkeyboard.R
 
-class SearchKeyboardAppView(
-    context: Context,
-    attrs: AttributeSet? = null
+class SearchBarView @JvmOverloads constructor(
+    context: Context, attrs: AttributeSet? = null
 ) : AppView(context, attrs), AppView.KeyboardAppListener {
 
-    override val icon = R.drawable.ic_action_search
     val searchBar: EditText
-    private val goButton: ImageButton
+    private val searchIcon: ImageButton
 
     init {
-        val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.app_view, this, true)
-        searchBar = view.findViewById(R.id.searchBar)
-        goButton = view.findViewById(R.id.goButton)
+        val view = LayoutInflater.from(context).inflate(R.layout.search_bar_view, this, true)
+        searchBar = view.findViewById(R.id.search_bar)
+        searchIcon = view.findViewById(R.id.search_button)
+
         setupViews()
     }
 
     private fun setupViews() {
-        goButton.setOnClickListener { performSearch() }
+        searchIcon.setOnClickListener { performSearch() }
         searchBar.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 performSearch()
