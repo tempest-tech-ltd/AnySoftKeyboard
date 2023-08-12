@@ -13,9 +13,9 @@
     <!-- Functional keys. -->
 
     <item  ask:key_type_function="true" android:state_pressed="true"
-          android:drawable="@drawable/light_btn_key_function_pressed"/>
+          android:drawable="@drawable/tempest_btn_key_function_pressed"/>
     <item ask:key_type_function="true"
-          android:drawable="@drawable/light_btn_key_function"/>
+          android:drawable="@drawable/tempest_btn_key_function"/>
 
     <!-- Toggle keys. Use checkable/checked state. -->
 
