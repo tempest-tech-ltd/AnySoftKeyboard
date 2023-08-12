@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:ask="http://schemas.android.com/apk/res-auto">
+
+    <!-- Search keys -->
+    <item ask:action_search="true" ask:key_type_feedback="true" android:drawable="@drawable/ic_keyboard_search"/>
+    <item ask:action_search="true" android:drawable="@drawable/ic_keyboard_search"/>
+
+    <!-- Done keys -->
+    <item ask:action_done="true" ask:key_type_feedback="true" android:drawable="@drawable/ic_keyboard_enter"/>
+    <item ask:action_done="true" android:drawable="@drawable/ic_keyboard_enter"/>
+
+    <!-- ENTER keys -->
+    <item ask:key_type_feedback="true" android:drawable="@drawable/ic_keyboard_enter"/>
+    <item android:drawable="@drawable/ic_keyboard_enter"/>
+</selector>

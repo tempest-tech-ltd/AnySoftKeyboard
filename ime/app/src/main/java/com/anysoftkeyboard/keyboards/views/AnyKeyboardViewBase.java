@@ -195,7 +195,7 @@ public class AnyKeyboardViewBase extends View implements InputViewBinder, Pointe
   private final ThemeOverlayCombiner mThemeOverlayCombiner = new ThemeOverlayCombiner();
 
   public AnyKeyboardViewBase(Context context, AttributeSet attrs) {
-    this(context, attrs, R.style.PlainLightAnySoftKeyboard);
+    this(context, attrs, R.style.TempestKeyboard);
   }
 
   public AnyKeyboardViewBase(Context context, AttributeSet attrs, int defStyle) {
@@ -1306,11 +1306,13 @@ public class AnyKeyboardViewBase extends View implements InputViewBinder, Pointe
           iconToDraw.setBounds(0, 0, drawableWidth, drawableHeight);
           iconToDraw.draw(canvas);
           canvas.translate(-drawableX, -drawableY);
-          if (keyIsSpace && drawKeyboardNameText) {
-            // now a little hack, I'll set the label now, so it get
-            // drawn.
-            label = mKeyboardName;
-          }
+
+          // Tempest dont show space bar label
+//          if (keyIsSpace && drawKeyboardNameText) {
+//            // now a little hack, I'll set the label now, so it get
+//            // drawn.
+//            label = mKeyboardName;
+//          }
         } else {
           // ho... no icon.
           // I'll try to guess the text
@@ -1474,6 +1476,9 @@ public class AnyKeyboardViewBase extends View implements InputViewBinder, Pointe
           // below
           hintY = key.height - mKeyBackgroundPadding.bottom - mHintTextFontMetrics.bottom - 0.5f;
         }
+
+        // Tempest dont show any key label
+        hintText="";
 
         canvas.drawText(hintText, hintX, hintY, paint);
         paint.setTextAlign(oldAlign);

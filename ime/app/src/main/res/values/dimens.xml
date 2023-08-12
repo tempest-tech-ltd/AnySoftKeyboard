@@ -51,7 +51,9 @@
     <dimen name="key_preview_offset">0dp</dimen>
     <dimen name="mini_keyboard_slide_allowance">80dp</dimen>
 
-    <dimen name="key_corner_radius">3dp</dimen>
+    <!--  Tempest increase key radius  -->
+    <!--    <dimen name="key_corner_radius">3dp</dimen>-->
+    <dimen name="key_corner_radius">8dp</dimen>
 
     <dimen name="key_top_inset">3dp</dimen>
     <dimen name="key_bottom_inset">3dp</dimen>

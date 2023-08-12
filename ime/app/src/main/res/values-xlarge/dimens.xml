@@ -41,7 +41,9 @@
     <dimen name="candidate_strip_height">42dip</dimen>
     <dimen name="candidate_font_height">25sp</dimen>
 
-    <dimen name="key_corner_radius">4dp</dimen>
+    <!--  Tempest increase key radius  -->
+    <!--    <dimen name="key_corner_radius">3dp</dimen>-->
+    <dimen name="key_corner_radius">8dp</dimen>
 
     <dimen name="key_top_inset">4dp</dimen>
     <dimen name="key_bottom_inset">4dp</dimen>

@@ -18,7 +18,7 @@
 */
 --><resources>
     <color name="candidate_normal">#FFFFFFFF</color>
-    <color name="candidate_recommended">#FFE35900</color>
+    <color name="candidate_recommended">#D86E29</color>
     <color name="candidate_other">#ff808080</color>
     <color name="light_candidate_normal">#FF000000</color>
     <color name="light_candidate_recommended">#FFE35900</color>
@@ -70,5 +70,20 @@
     <color name="aosp_light_background">#DDD</color>
     <color name="aosp_light_suggestions_background">#AAA</color>
 
+    <!--  Tempest  -->
     <color name="search_bar_background">#AAA</color>
+
+    <color name="keyboard_toolbar_emoji_color">#151515</color>
+
+    <color name="keyboard_bg_root">#FCFCFF</color>
+    <color name="keyboard_bg_normal_color">#FFFFFF</color>
+    <color name="keyboard_bg_normal_stroke_color">#EFEFEF</color>
+
+    <color name="keyboard_bg_action_color">#76D1FF</color>
+    <color name="keyboard_bg_attribute_color">#D1E5F4</color>
+    <color name="keyboard_bg_change_color">#B5CAD7</color>
+
+    <color name="tv_text_color">#000000</color>
+    <!--  Tempest  -->
+
 </resources>

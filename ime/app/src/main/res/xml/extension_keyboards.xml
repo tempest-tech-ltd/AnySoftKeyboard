@@ -92,10 +92,19 @@
 
 
     <!-- bottom rows -->
+<!--  Tempest  -->
+<!--    <ExtensionKeyboard-->
+<!--            id="09f8f280-dee2-11e0-9572-0800200c9a66"-->
+<!--            nameResId="@string/extension_kbd_bottom_regular_with_voice"-->
+<!--            extensionKeyboardResId="@xml/ext_kbd_bottom_row_regular_with_voice"-->
+<!--            extensionKeyboardType="@integer/extension_keyboard_type_bottom_row"-->
+<!--            description=""-->
+<!--            index="1"-->
+<!--            />-->
     <ExtensionKeyboard
             id="09f8f280-dee2-11e0-9572-0800200c9a66"
             nameResId="@string/extension_kbd_bottom_regular_with_voice"
-            extensionKeyboardResId="@xml/ext_kbd_bottom_row_regular_with_voice"
+            extensionKeyboardResId="@xml/tempest_bottom_row_regular_with_voice"
             extensionKeyboardType="@integer/extension_keyboard_type_bottom_row"
             description=""
             index="1"

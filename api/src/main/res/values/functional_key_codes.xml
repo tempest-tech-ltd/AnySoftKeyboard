@@ -11,7 +11,9 @@
     <integer name="key_code_clear_input">-13</integer>
     <integer name="key_code_voice_input">-4</integer>
 
-    <integer name="key_code_quick_text">-10</integer>
+    // Tempest
+<!--    <integer name="key_code_quick_text">-10</integer>-->
+    <integer name="key_code_quick_text">-102</integer>
     <integer name="key_code_quick_text_popup">-102</integer>
     <integer name="key_code_clear_quick_text_history">-103</integer>
     <integer name="key_code_image_media_popup">-140</integer>
