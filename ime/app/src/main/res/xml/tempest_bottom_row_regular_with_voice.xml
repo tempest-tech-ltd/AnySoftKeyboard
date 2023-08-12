@@ -73,4 +73,3 @@
             ask:longPressCode="@integer/key_code_settings"/>
     </Row>
 </Keyboard>
-    <!--    TODO add comma at bottom remove emoji-->
