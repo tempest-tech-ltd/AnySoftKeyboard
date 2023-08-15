@@ -15,7 +15,7 @@
         <!-- should support normal, feedback -->
         <item name="iconKeyTab">@drawable/sym_keyboard_tab</item>
         <!-- should support normal, feedback -->
-        <item name="iconKeyCancel">@drawable/sym_keyboard_cancel</item>
+        <item name="iconKeyCancel">@drawable/ic_hide_keyboard</item>
         <item name="iconKeyImageInsert">@drawable/ic_media_insertion</item>
         <!-- should support normal, feedback -->
         <item name="iconKeyGlobe">@drawable/ic_language_dark</item>
@@ -58,7 +58,7 @@
 
         <item name="keyTextSize">@dimen/key_text_size</item>
         <item name="keyTextStyle">bold</item>
-        <item name="keyTextColor">#FFFFFFFF</item>
+        <item name="keyTextColor">@color/tv_text_color</item>
         <item name="labelTextSize">@dimen/key_label_text_size</item>
 
         <item name="keyboardNameTextSize">@dimen/keyboard_name_text_size</item>
@@ -82,12 +82,12 @@
 
         <!-- key preview (feedback) -->
         <item name="keyPreviewBackground">@drawable/dark_btn_key_preview_background</item>
-        <item name="keyPreviewTextColor">#FFFFFFFF</item>
+        <item name="keyPreviewTextColor">@color/tv_text_color</item>
         <item name="keyPreviewTextSize">36sp</item>
         <item name="keyPreviewLabelTextSize">26sp</item>
         <item name="keyPreviewOffset">@dimen/key_preview_offset</item>
         <item name="previewGestureTextSize">16sp</item>
-        <item name="previewGestureTextColor">#FFFFFFFF</item>
+        <item name="previewGestureTextColor">@color/tv_text_color</item>
         <item name="previewAnimationType">appear</item>
         <!-- suggestion strip -->
         <item name="suggestionNormalTextColor">@color/tv_text_color</item>
@@ -148,7 +148,7 @@
         <item name="suggestionRecommendedTextColor">@color/candidate_recommended</item>
         <item name="suggestionOthersTextColor">@color/candidate_other</item>
         <item name="suggestionTextSize">@dimen/candidate_font_height</item>
-        <item name="suggestionBackgroundImage">@drawable/light_background_suggestions</item>
+        <item name="suggestionBackgroundImage">@drawable/tempest_background_suggestions</item>
         <item name="suggestionDividerImage">@drawable/dark_suggestions_divider</item>
         <item name="suggestionStripHeight">@dimen/candidate_strip_height</item>
 
@@ -157,8 +157,8 @@
     </style>
 
     <style name="TempestKeyboardPopup" parent="@style/TempestPopupBaseTheme">
-        <item name="android:background">@drawable/light_background_popup</item>
-        <item name="keyBackground">@drawable/key_bg</item>
+        <item name="android:background">@drawable/tempest_background_popup</item>
+        <item name="keyBackground">@drawable/popup_key_bg</item>
         <item name="keyTextColor">@color/tv_text_color</item>
     </style>
 </resources>

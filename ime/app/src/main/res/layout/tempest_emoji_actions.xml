@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/quick_text_actions_layout"
+    android:layout_height="@dimen/quick_key_size"
+    android:orientation="horizontal"
+    android:weightSum="1">
+    <ImageView
+        android:id="@+id/quick_keys_popup_close"
+        android:layout_height="match_parent"
+        android:layout_width="44dp"
+        android:contentDescription="@string/close_button"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_hide_keyboard" />
+    <View
+        android:layout_width="1px"
+        android:layout_height="0px"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/quick_keys_popup_backspace"
+        android:layout_height="match_parent"
+        android:layout_width="44dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_keyboard_backspace" />
+
+</LinearLayout>

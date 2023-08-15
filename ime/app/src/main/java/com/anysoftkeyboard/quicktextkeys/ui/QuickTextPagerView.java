@@ -92,8 +92,9 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
     mMediaInsertionDrawable = mediaInsertionDrawable;
     mDeleteRecentlyUsedDrawable = deleteRecentlyUsedDrawable;
     mBottomPadding = bottomPadding;
-    findViewById(R.id.quick_keys_popup_quick_keys_insert_media)
-        .setVisibility(supportedMediaTypes.isEmpty() ? View.GONE : VISIBLE);
+    //Tempest removed
+//    findViewById(R.id.quick_keys_popup_quick_keys_insert_media)
+//        .setVisibility(supportedMediaTypes.isEmpty() ? View.GONE : VISIBLE);
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
       setBackground(keyboardDrawable);
     } else {
@@ -129,9 +130,9 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
             mDefaultGenderPrefTracker,
             mKeyboardTheme,
             mBottomPadding);
-
-    final ImageView clearEmojiHistoryIcon =
-        findViewById(R.id.quick_keys_popup_delete_recently_used_smileys);
+    //Tempest removed
+//    final ImageView clearEmojiHistoryIcon =
+//        findViewById(R.id.quick_keys_popup_delete_recently_used_smileys);
     ViewPager.SimpleOnPageChangeListener onPageChangeListener =
         new ViewPager.SimpleOnPageChangeListener() {
           @Override
@@ -141,7 +142,8 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
             quickTextUserPrefs.setLastSelectedAddOnId(selectedKey.getId());
             // if this is History, we need to show clear icon
             // else, hide the clear icon
-            clearEmojiHistoryIcon.setVisibility(position == 0 ? View.VISIBLE : View.GONE);
+            //Tempest removed
+//            clearEmojiHistoryIcon.setVisibility(position == 0 ? View.VISIBLE : View.GONE);
           }
         };
     int startPageIndex = quickTextUserPrefs.getStartPageIndex(list);
@@ -157,11 +159,12 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
     // setting up icons from theme
     ((ImageView) findViewById(R.id.quick_keys_popup_close)).setImageDrawable(mCloseKeyboardIcon);
     ((ImageView) findViewById(R.id.quick_keys_popup_backspace)).setImageDrawable(mBackspaceIcon);
-    ((ImageView) findViewById(R.id.quick_keys_popup_quick_keys_insert_media))
-        .setImageDrawable(mMediaInsertionDrawable);
-    clearEmojiHistoryIcon.setImageDrawable(mDeleteRecentlyUsedDrawable);
-    ((ImageView) findViewById(R.id.quick_keys_popup_quick_keys_settings))
-        .setImageDrawable(mSettingsIcon);
+    //Tempest removed
+//    ((ImageView) findViewById(R.id.quick_keys_popup_quick_keys_insert_media))
+//        .setImageDrawable(mMediaInsertionDrawable);
+//    clearEmojiHistoryIcon.setImageDrawable(mDeleteRecentlyUsedDrawable);
+//    ((ImageView) findViewById(R.id.quick_keys_popup_quick_keys_settings))
+//        .setImageDrawable(mSettingsIcon);
     final View actionsLayout = findViewById(R.id.quick_text_actions_layout);
     actionsLayout.setPadding(
         actionsLayout.getPaddingLeft(),

@@ -139,9 +139,13 @@ import java.util.List;
   @Override
   public CharSequence getPageTitle(int position) {
     QuickTextKey key = mAddOns[position];
+// Tempest
+//    return mContext
+//        .getResources()
+//        .getString(R.string.quick_text_tab_title_template, key.getKeyOutputText(), key.getName());
     return mContext
         .getResources()
-        .getString(R.string.quick_text_tab_title_template, key.getKeyOutputText(), key.getName());
+        .getString(R.string.quick_text_tab_title_template, key.getKeyOutputText());
   }
 
   @Override
