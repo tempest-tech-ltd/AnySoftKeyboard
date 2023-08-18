@@ -5,6 +5,9 @@
     android:id="@+id/quick_text_actions_layout"
     android:layout_height="@dimen/quick_key_size"
     android:orientation="horizontal"
+    android:minHeight="@dimen/quick_key_size"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
     android:weightSum="1">
     <ImageView
         android:id="@+id/quick_keys_popup_close"
@@ -14,7 +17,7 @@
         android:scaleType="centerInside"
         android:src="@drawable/ic_hide_keyboard" />
     <View
-        android:layout_width="1px"
+        android:layout_width="0dp"
         android:layout_height="0px"
         android:layout_weight="1" />
 
