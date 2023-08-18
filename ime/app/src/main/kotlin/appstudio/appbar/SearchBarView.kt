@@ -17,12 +17,12 @@ class SearchBarView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
 ) : AppView(context, attrs), AppView.KeyboardAppListener {
 
-    val searchBar: EditText
+    val searchText: EditText
     private val searchIcon: ImageButton
 
     init {
         val view = LayoutInflater.from(context).inflate(R.layout.search_bar_view, this, true)
-        searchBar = view.findViewById(R.id.search_bar)
+        searchText = view.findViewById(R.id.search_text)
         searchIcon = view.findViewById(R.id.search_button)
 
         setupViews()
@@ -30,7 +30,7 @@ class SearchBarView @JvmOverloads constructor(
 
     private fun setupViews() {
         searchIcon.setOnClickListener { performSearch() }
-        searchBar.setOnEditorActionListener { _, actionId, _ ->
+        searchText.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 performSearch()
                 true
@@ -41,7 +41,7 @@ class SearchBarView @JvmOverloads constructor(
     }
 
     private fun performSearch() {
-        val query = searchBar.text.toString()
+        val query = searchText.text.toString()
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bing.com/search?q=$query"))
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         try {

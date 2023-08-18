@@ -51,6 +51,11 @@
         <item name="iconKeyArrowDown">@drawable/yochees_dark_arrow_down</item>
     </style>
 
+    <style name="TempestSearchTheme" parent="Theme.AppCompat.DayNight.Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="TempestBaseTheme" parent="Theme.AppCompat.DayNight">
         <item name="android:background">@drawable/tempest_background</item>
         <item name="keyboardWallpaper">@drawable/tempest_background</item>

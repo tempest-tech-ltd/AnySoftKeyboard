@@ -8,7 +8,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,8 +16,6 @@ import com.anysoftkeyboard.android.PermissionRequestHelper;
 import com.anysoftkeyboard.base.utils.Logger;
 import com.menny.android.anysoftkeyboard.AnyApplication;
 import com.menny.android.anysoftkeyboard.R;
-
-import appstudio.search.SearchActivity;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 
 public class WizardPermissionsFragment extends WizardPageBaseFragment
@@ -32,9 +29,6 @@ public class WizardPermissionsFragment extends WizardPageBaseFragment
   @Override
   public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
-    /* Added by Tempest **/
-    view.findViewById(R.id.open_search_frag).setOnClickListener(this);
-    /* Added by Tempest **/
     view.findViewById(R.id.ask_for_permissions_action).setOnClickListener(this);
     mStateIcon.setOnClickListener(this);
     view.findViewById(R.id.disable_contacts_dictionary).setOnClickListener(this);
@@ -81,17 +75,6 @@ public class WizardPermissionsFragment extends WizardPageBaseFragment
     if (activity == null) return;
 
     switch (v.getId()) {
-      /* Added by Tempest **/
-      case R.id.open_search_frag:
-        Intent intent = new Intent(requireContext(), SearchActivity.class);
-        intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK);
-        try {
-          requireContext().startActivity(intent);
-        } catch ( ActivityNotFoundException e) {
-          Toast.makeText(requireContext(), "Unable to open search", Toast.LENGTH_SHORT).show();
-        }
-        break;
-        /* Added by Tempest **/
       case R.id.ask_for_permissions_action:
       case R.id.step_state_icon:
         enableContactsDictionary();

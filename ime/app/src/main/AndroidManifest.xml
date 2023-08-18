@@ -99,14 +99,14 @@
             android:windowSoftInputMode="adjustPan" />
 
         <!--  Added by Tempest  -->
+
         <activity
-            android:name="appstudio.search.SearchActivity"
+            android:name="appstudio.search.SearchBarActivity"
             android:icon="@mipmap/ic_launcher"
-            android:label="Example Activity"
             android:launchMode="singleTask"
             android:roundIcon="@mipmap/ic_launcher_round"
-            android:theme="@style/Theme.AskApp"
-            android:windowSoftInputMode="adjustPan" />
+            android:theme="@style/TempestSearchTheme"
+            android:windowSoftInputMode="adjustResize" />
         <!--  Added by Tempest  -->
 
         <activity

@@ -1,12 +1,15 @@
 package com.anysoftkeyboard.keyboards.views;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -22,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import appstudio.appbar.SearchBarView;
+import appstudio.search.SearchBarActivity;
 
 public class KeyboardViewContainerView extends ViewGroup implements ThemeableChild {
 
@@ -38,11 +42,16 @@ public class KeyboardViewContainerView extends ViewGroup implements ThemeableChi
   private OverlayData mOverlayData = new OverlayData();
   private final Rect mExtraPaddingToMainKeyboard = new Rect();
 
-  /** Added by Tempest **/
+  /**
+   * Added by Tempest
+   **/
   private SearchBarView mSearchView;
   public View mSearchIconView;
   public boolean mShowSearch = false;
-  /** Added by Tempest **/
+
+  /**
+   * Added by Tempest
+   **/
 
   public KeyboardViewContainerView(Context context) {
     super(context);
@@ -108,7 +117,9 @@ public class KeyboardViewContainerView extends ViewGroup implements ThemeableChi
     return false;
   }
 
-  /** Added by Tempest **/
+  /**
+   * Added by Tempest
+   **/
   public void setSearchVisibility(boolean visible) {
     if (mSearchView != null) {
       mSearchView.setVisibility(visible ? VISIBLE : GONE);
@@ -129,11 +140,21 @@ public class KeyboardViewContainerView extends ViewGroup implements ThemeableChi
 
     mSearchIconView = provider.inflateActionView(this);
     mSearchIconView.setOnClickListener(v -> {
-      addSearchView(context);
-      setSearchIconVisibility(false);
+      startSearchActivity(context);
     });
     addView(mSearchIconView, 0);
     invalidate();
+  }
+
+  private void startSearchActivity(Context context) {
+
+    Intent intent = new Intent(context, SearchBarActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
+    try {
+      context.startActivity(intent);
+    } catch (ActivityNotFoundException e) {
+      Toast.makeText(context, "Unable to open browser", Toast.LENGTH_SHORT).show();
+    }
   }
 
   public SearchBarView getSearchView(Context context) {
@@ -162,7 +183,10 @@ public class KeyboardViewContainerView extends ViewGroup implements ThemeableChi
       invalidate();
     }
   }
-  /** Added by Tempest **/
+
+  /**
+   * Added by Tempest
+   **/
 
   public void setActionsStripVisibility(boolean requestedVisibility) {
     mShowActionStrip = requestedVisibility;
@@ -338,7 +362,8 @@ public class KeyboardViewContainerView extends ViewGroup implements ThemeableChi
   }
 
   public interface StripActionProvider {
-    @NonNull View inflateActionView(@NonNull ViewGroup parent);
+    @NonNull
+    View inflateActionView(@NonNull ViewGroup parent);
 
     void onRemoved();
   }

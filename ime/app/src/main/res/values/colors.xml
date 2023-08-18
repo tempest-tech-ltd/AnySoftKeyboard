@@ -71,7 +71,7 @@
     <color name="aosp_light_suggestions_background">#AAA</color>
 
     <!--  Tempest  -->
-    <color name="search_bar_background">#AAA</color>
+    <color name="search_bar_background">#CCC</color>
 
     <color name="keyboard_toolbar_emoji_color">#151515</color>
 
