@@ -62,7 +62,7 @@
         <item name="keyBackground">@drawable/tempest_btn_key</item>
 
         <item name="keyTextSize">@dimen/key_text_size</item>
-        <item name="keyTextStyle">bold</item>
+        <item name="keyTextStyle">normal</item>
         <item name="keyTextColor">@color/tv_text_color</item>
         <item name="labelTextSize">@dimen/key_label_text_size</item>
 

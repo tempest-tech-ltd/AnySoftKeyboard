@@ -414,7 +414,10 @@ public abstract class AnyKeyboard extends Keyboard {
           switch (key.getPrimaryCode()) {
             case KeyCodes.MODE_SYMBOLS:
             case KeyCodes.KEYBOARD_MODE_CHANGE:
-              key.popupResId = R.xml.ext_symbols;
+//              Tempest no popup keyboard on long press
+//              key.popupResId = R.xml.ext_symbols;
+//              key.popupResId = 0;
+
               key.externalResourcePopupLayout = false;
               return true;
           }

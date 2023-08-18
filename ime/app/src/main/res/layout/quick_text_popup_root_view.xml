@@ -39,7 +39,10 @@
 
     </LinearLayout>
 
-<!--  Tempest  -->
-<!--    <include layout="@layout/quick_text_general_actions" />-->
-    <include layout="@layout/tempest_emoji_actions" />
+    <!--  Tempest  -->
+    <!--    <include layout="@layout/quick_text_general_actions" />-->
+    <include
+        layout="@layout/tempest_emoji_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </com.anysoftkeyboard.quicktextkeys.ui.QuickTextPagerView>
