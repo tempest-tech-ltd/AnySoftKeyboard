@@ -72,6 +72,7 @@
 
     <!--  Tempest  -->
     <color name="search_bar_background">#CCC</color>
+    <color name="app_icon_background">#CCC</color>
 
     <color name="keyboard_toolbar_emoji_color">#151515</color>
 

@@ -70,12 +70,13 @@
         android:text="@string/read_more_about_permissions" />
 
     <!--  Added by Tempest  -->
-    <EditText
-        android:id="@+id/searchBar"
+
+    <appstudio.appbar.SearchBarView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusableInTouchMode="true"
-        android:hint="Type search here..." />
+        android:layout_height="wrap_content"/>
+    <appstudio.appbar.AppBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <!--  Added by Tempest  -->
 
 </LinearLayout>

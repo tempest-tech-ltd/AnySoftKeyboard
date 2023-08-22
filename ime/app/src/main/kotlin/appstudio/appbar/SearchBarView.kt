@@ -10,12 +10,18 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.Toast
+import appstudio.search.SearchBarActivity
 import com.menny.android.anysoftkeyboard.R
 
-class SearchBarView @JvmOverloads constructor(
+class SearchBarView(
     context: Context, attrs: AttributeSet? = null
-) : AppView(context, attrs), AppView.KeyboardAppListener {
+) : LinearLayout(context, attrs), AppView {
+
+    override val icon: Int
+        get() = R.drawable.ic_search_app
+
 
     val searchText: EditText
     private val searchIcon: ImageButton
@@ -51,10 +57,13 @@ class SearchBarView @JvmOverloads constructor(
         }
     }
 
-    override fun onAppOpened(parent: ViewGroup) {
-        parent.addView(this, 0)
-    }
-
-    override fun onAppClosed() {
+    override fun onAppIconClick() {
+        val intent = Intent(context, SearchBarActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        try {
+            context.startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(context, "Unable to open Search Activity", Toast.LENGTH_SHORT).show()
+        }
     }
 }

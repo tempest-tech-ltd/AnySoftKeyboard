@@ -44,7 +44,7 @@ class SearchBarActivity : AppCompatActivity() {
             searchText.requestFocus()
             val keyboard = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
             keyboard?.showSoftInput(searchText, InputMethodManager.SHOW_IMPLICIT)
-        }, 400L)
+        }, 100L)
 
     }
 
