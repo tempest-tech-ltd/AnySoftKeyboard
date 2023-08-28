@@ -48,13 +48,16 @@ class SearchBarView(
 
     private fun performSearch() {
         val query = searchText.text.toString()
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bing.com/search?q=$query"))
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        try {
-            context.startActivity(intent)
-        } catch (e: ActivityNotFoundException) {
-            Toast.makeText(context, "Unable to open browser", Toast.LENGTH_SHORT).show()
+        if(query.isNotEmpty()){
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bing.com/search?q=$query"))
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            try {
+                context.startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                Toast.makeText(context, "Unable to open browser", Toast.LENGTH_SHORT).show()
+            }
         }
+
     }
 
     override fun onAppIconClick() {

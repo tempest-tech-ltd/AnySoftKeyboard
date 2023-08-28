@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:padding="4dp"
+            android:textColor="@color/search_bar_background"
             android:text="Cancel"
             android:visibility="visible" />
         <!--        todo lang-->

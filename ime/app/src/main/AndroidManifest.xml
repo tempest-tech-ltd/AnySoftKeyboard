@@ -106,6 +106,7 @@
             android:launchMode="singleTask"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:theme="@style/TempestSearchTheme"
+            android:noHistory="true"
             android:windowSoftInputMode="adjustResize" />
         <!--  Added by Tempest  -->
 

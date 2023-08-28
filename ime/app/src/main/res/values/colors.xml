@@ -77,6 +77,7 @@
     <color name="keyboard_toolbar_emoji_color">#151515</color>
 
     <color name="keyboard_bg_root">#FCFCFF</color>
+    <color name="keyboard_bg_root_dark">#191C1E</color>
     <color name="keyboard_bg_normal_color">#FFFFFF</color>
     <color name="keyboard_bg_normal_stroke_color">#EFEFEF</color>
 
