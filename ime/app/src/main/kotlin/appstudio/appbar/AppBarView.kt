@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import appstudio.appbar.search.SearchBarView
 import appstudio.offers.Offer
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.menny.android.anysoftkeyboard.R
 
 open class AppBarView(context: Context, attrs: AttributeSet?) :
@@ -27,7 +28,7 @@ open class AppBarView(context: Context, attrs: AttributeSet?) :
     init {
         layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         adapter = AppViewAdapter(getApps(), getOffers())
-        background = ResourcesCompat.getDrawable(resources, R.drawable.tempest_background,null)
+        background = ResourcesCompat.getDrawable(resources, R.drawable.tempest_background, null)
 
 
     }
@@ -96,6 +97,7 @@ open class AppBarView(context: Context, attrs: AttributeSet?) :
                 Glide.with(context)
                     .load(offer.iconUrl)
                     .placeholder(R.drawable.ic_media_insertion)
+                    .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                     .into(icon)
 
                 holder.iconView.setOnClickListener {

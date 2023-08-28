@@ -23,6 +23,8 @@ import com.anysoftkeyboard.ui.settings.MainSettingsActivity;
 import com.anysoftkeyboard.ui.settings.setup.SetupSupport;
 import com.anysoftkeyboard.ui.settings.setup.SetupWizardActivity;
 
+import appstudio.MainActivity;
+
 /*
  * Why is this class exists?
  * It is a forwarder activity that I can disable, thus not showing Settings in the launcher menu.
@@ -49,11 +51,14 @@ public class LauncherSettingsActivity extends Activity {
     if (mLaunched) {
       finish();
     } else {
-      if (SetupSupport.isThisKeyboardEnabled(getApplication())) {
-        startActivity(new Intent(this, MainSettingsActivity.class));
-      } else {
-        startActivity(new Intent(this, SetupWizardActivity.class));
-      }
+//    Tempest
+//      if (SetupSupport.isThisKeyboardEnabled(getApplication())) {
+//        startActivity(new Intent(this, MainSettingsActivity.class));
+//      } else {
+//        startActivity(new Intent(this, SetupWizardActivity.class));
+//      }
+      startActivity(new Intent(this, MainActivity.class));
+
     }
 
     mLaunched = true;

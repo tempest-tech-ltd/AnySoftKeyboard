@@ -19,11 +19,11 @@
     <!-- REQUIRED BACKUP TO/RESTORE FROM SDCARD -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- Required by Android 13 (API level 33) -->
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <!--  Added by Tempest  -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!--  Added by Tempest  -->
 
     <!-- currently, only support touch and fake-touch devices -->
@@ -34,13 +34,13 @@
 
     <application
         android:name=".AnyApplication"
+        android:allowBackup="true"
+        android:fullBackupOnly="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:installLocation="internalOnly"
         android:label="@string/ime_name"
         android:restoreAnyVersion="true"
-        android:fullBackupOnly="true"
-        android:allowBackup="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.AskApp"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
@@ -55,9 +55,9 @@
         <!-- this is the IME with the pointer to the settings ui (xml/method) -->
         <service
             android:name=".SoftKeyboard"
-            android:label="@string/ime_name"
-            android:exported="true"
             android:directBootAware="true"
+            android:exported="true"
+            android:label="@string/ime_name"
             android:permission="android.permission.BIND_INPUT_METHOD">
             <intent-filter>
                 <action android:name="android.view.InputMethod" />
@@ -73,8 +73,8 @@
         <!-- this is just a proxy activity, it does nothing but direct to the actual setting activity
         I use this, so I can 'disable' this activity at runtime, and so remove ASK from the launcher's icons -->
         <activity
-            android:exported="true"
             android:name="com.menny.android.anysoftkeyboard.LauncherSettingsActivity"
+            android:exported="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/ime_name"
             android:launchMode="singleTop"
@@ -104,10 +104,18 @@
             android:name="appstudio.appbar.search.SearchBarActivity"
             android:icon="@mipmap/ic_launcher"
             android:launchMode="singleTask"
+            android:noHistory="true"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:theme="@style/TempestSearchTheme"
-            android:noHistory="true"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="appstudio.MainActivity"
+            android:icon="@mipmap/ic_launcher"
+            android:launchMode="singleTask"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:theme="@style/Theme.AskApp.NoTitle.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
 
         <!--  Added by Tempest  -->
 
@@ -171,7 +179,7 @@
 
         <!-- other IMEs -->
         <intent>
-            <action android:name="android.view.InputMethod"/>
+            <action android:name="android.view.InputMethod" />
         </intent>
     </queries>
 </manifest>

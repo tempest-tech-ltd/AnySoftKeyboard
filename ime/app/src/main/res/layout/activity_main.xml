@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="100dp"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/go_to_language_settings"
+        style="@style/Ask.Text.Link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/transparent_click_feedback_background"
+        android:drawableLeft="@drawable/ic_settings_language"
+        android:drawablePadding="6dp"
+        android:padding="4dp"
+        android:text="@string/setup_wizard_step_one_action" />
+
+    <TextView
+        android:id="@+id/go_to_switch_keyboard"
+        style="@style/Ask.Text.Link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/transparent_click_feedback_background"
+        android:drawableStart="@drawable/ic_user_interface_category"
+        android:drawableLeft="@drawable/ic_user_interface_category"
+        android:drawablePadding="6dp"
+        android:padding="4dp"
+        android:text="@string/setup_wizard_step_two_action" />
+
+    <TextView
+        android:id="@+id/enabled"
+        style="@style/Ask.Text.Link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/transparent_click_feedback_background"
+        android:drawableStart="@drawable/ic_user_interface_category"
+        android:drawableLeft="@drawable/ic_user_interface_category"
+        android:drawablePadding="6dp"
+        android:padding="4dp"
+        android:text="Enabled = false | Default = false" />
+
+    <appstudio.appbar.search.SearchBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
+
+    <appstudio.appbar.AppBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/go_to_ask"
+        style="@style/Ask.Text.Link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/transparent_click_feedback_background"
+        android:drawableStart="@drawable/ic_not_configured_black"
+        android:drawableLeft="@drawable/ic_not_configured_black"
+        android:drawablePadding="6dp"
+        android:padding="4dp"
+        android:text="Go to Anysoft Main Activity" />
+
+
+</LinearLayout>

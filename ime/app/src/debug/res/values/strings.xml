@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="ime_name"
-            tools:ignore="MissingTranslation">AnySoftKeyboard Dev</string>
+<!--    Tempest-->
+<!--    <string name="ime_name"-->
+<!--            tools:ignore="MissingTranslation">AnySoftKeyboard Dev</string>-->
+        <string name="ime_name"
+            tools:ignore="MissingTranslation">Tempest Keyboard Dev</string>
 </resources>
