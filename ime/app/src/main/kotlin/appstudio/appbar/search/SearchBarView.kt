@@ -1,4 +1,4 @@
-package appstudio.appbar
+package appstudio.appbar.search
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -6,13 +6,12 @@ import android.content.Intent
 import android.net.Uri
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Toast
-import appstudio.search.SearchBarActivity
+import appstudio.appbar.AppView
 import com.menny.android.anysoftkeyboard.R
 
 class SearchBarView(

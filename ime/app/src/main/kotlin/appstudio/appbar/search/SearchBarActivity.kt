@@ -1,4 +1,4 @@
-package appstudio.search
+package appstudio.appbar.search
 
 import android.app.UiModeManager
 import android.content.Context
@@ -12,7 +12,6 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import appstudio.appbar.SearchBarView
 import com.menny.android.anysoftkeyboard.R
 
 

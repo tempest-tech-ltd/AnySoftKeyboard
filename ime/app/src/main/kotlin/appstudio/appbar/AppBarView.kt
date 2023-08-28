@@ -12,12 +12,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.annotation.DrawableRes
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import appstudio.appbar.search.SearchBarView
 import appstudio.offers.Offer
-import com.anysoftkeyboard.keyboards.views.DrawableBuilder
 import com.bumptech.glide.Glide
 import com.menny.android.anysoftkeyboard.R
 

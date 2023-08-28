@@ -71,7 +71,7 @@
 
     <!--  Added by Tempest  -->
 
-    <appstudio.appbar.SearchBarView
+    <appstudio.appbar.search.SearchBarView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <appstudio.appbar.AppBarView
