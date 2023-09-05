@@ -18,6 +18,7 @@ class SearchBarView(
     context: Context, attrs: AttributeSet? = null
 ) : LinearLayout(context, attrs), AppView {
 
+    override val name: String = context.resources.getString(R.string.search)
     override val icon: Int
         get() = R.drawable.ic_search_app
 
@@ -47,8 +48,9 @@ class SearchBarView(
 
     private fun performSearch() {
         val query = searchText.text.toString()
-        if(query.isNotEmpty()){
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bing.com/search?q=$query"))
+        if (query.isNotEmpty()) {
+            val intent =
+                Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bing.com/search?q=$query"))
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             try {
                 context.startActivity(intent)

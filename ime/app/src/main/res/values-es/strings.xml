@@ -2,7 +2,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
     <!--  Added by Tempest  -->
-    <string name="search">Buscar…</string>
+    <string name="search">Buscar</string>
+    <string name="search_hint">Buscar…</string>
     <string name="cancel">Cancelar</string>
 
     <!--  Added by Tempest  -->

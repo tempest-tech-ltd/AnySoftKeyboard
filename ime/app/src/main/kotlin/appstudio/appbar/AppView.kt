@@ -9,6 +9,8 @@ interface AppView {
     @get:DrawableRes
     val icon: Int
 
+    val name: String
+
     fun onAppIconClick()
 
     interface KeyboardAppListener {
