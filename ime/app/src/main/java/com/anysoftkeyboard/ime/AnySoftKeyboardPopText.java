@@ -28,11 +28,14 @@ import com.menny.android.anysoftkeyboard.R;
 
 public abstract class AnySoftKeyboardPopText extends AnySoftKeyboardPowerSaving {
 
-  private boolean mPopTextOnCorrection = true;
+  //  Tempest no pop animation on autocomplete
+//  private boolean mPopTextOnCorrection = true;
+  private boolean mPopTextOnCorrection = false;
   private boolean mPopTextOnWord = false;
   private boolean mPopTextOnKeyPress = false;
 
-  @Nullable private PopTextExtraDraw.PopOut mLastTextPop;
+  @Nullable
+  private PopTextExtraDraw.PopOut mLastTextPop;
 
   @Override
   public void onCreate() {
@@ -101,7 +104,8 @@ public abstract class AnySoftKeyboardPopText extends AnySoftKeyboardPowerSaving 
       int primaryCode, Keyboard.Key key, int multiTapIndex, int[] nearByKeyCodes, boolean fromUI) {
     super.onKey(primaryCode, key, multiTapIndex, nearByKeyCodes, fromUI);
     if (mPopTextOnKeyPress && isAlphabet(primaryCode)) {
-      popText(new String(new int[] {primaryCode}, 0, 1));
+      //Tempest dont pop text
+//      popText(new String(new int[]{primaryCode}, 0, 1));
     }
   }
 

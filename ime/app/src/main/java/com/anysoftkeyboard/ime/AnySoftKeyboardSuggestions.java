@@ -681,11 +681,12 @@ public abstract class AnySoftKeyboardSuggestions extends AnySoftKeyboardKeyboard
     CharSequence wordToOutput = typedWord.getTypedWord();
     // ACTION does not invoke default picking. See
     // https://github.com/AnySoftKeyboard/AnySoftKeyboard/issues/198
-    if (isAutoCorrect() && !newLine /*we do not auto-pick on ENTER.*/) {
-      if (!TextUtils.equals(wordToOutput, typedWord.getPreferredWord())) {
-        wordToOutput = typedWord.getPreferredWord();
-      }
-    }
+    //Tempest stop autocomplete word popup
+//    if (isAutoCorrect() && !newLine /*we do not auto-pick on ENTER.*/) {
+//      if (!TextUtils.equals(wordToOutput, typedWord.getPreferredWord())) {
+//        wordToOutput = typedWord.getPreferredWord();
+//      }
+//    }
     // this is a special case, when the user presses a separator WHILE
     // inside the predicted word.
     // in this case, I will want to just dump the separator.
