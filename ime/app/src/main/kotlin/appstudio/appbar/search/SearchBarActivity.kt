@@ -12,6 +12,9 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
+import appstudio.appbar.search.suggestions.SearchSuggestionsAdapter
+import appstudio.appbar.search.suggestions.Suggestion
 import com.menny.android.anysoftkeyboard.R
 
 
@@ -38,6 +41,19 @@ class SearchBarActivity : AppCompatActivity() {
         val searchText = findViewById<EditText>(R.id.search_text)
         val searchButton = findViewById<ImageButton>(R.id.search_button)
         val cancelButton = findViewById<TextView>(R.id.cancel_button)
+        val suggestionsView = findViewById<RecyclerView>(R.id.suggestions)
+
+        //Mock Suggestions
+        val suggestions = listOf(
+            "Holiday Weather Alerts ",
+            "Holiday Pictures",
+            "Holiday Gift Ideas",
+            "Holiday Shopping Deals",
+            "Holiday Recipes 2023"
+        ).map { it -> Suggestion(it, "") }
+        val suggestionsAdapter = SearchSuggestionsAdapter(this, suggestions)
+        suggestionsView.adapter = suggestionsAdapter
+
         cancelButton.setOnClickListener {
             finish()
         }

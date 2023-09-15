@@ -102,7 +102,7 @@
         <item name="suggestionBackgroundImage">@drawable/tempest_background</item>
         <item name="suggestionDividerImage">@drawable/dark_suggestions_divider</item>
         <item name="suggestionStripHeight">@dimen/candidate_strip_height</item>
-        <item name="suggestionSelectionHighlight">@drawable/dark_candidate_selected_background</item>
+        <item name="suggestionSelectionHighlight">@drawable/tempest_candidate_selected_background</item>
         <item name="suggestionWordXGap">@dimen/candidate_strip_x_gap</item>
         <item name="suggestionCloseImage">@drawable/close_suggestions_dark</item>
 

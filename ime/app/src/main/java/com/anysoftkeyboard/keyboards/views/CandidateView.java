@@ -206,7 +206,9 @@ public class CandidateView extends View implements ThemeableChild {
     }
     if (mSelectionHighlight == null) {
       mSelectionHighlight =
-          ContextCompat.getDrawable(context, R.drawable.dark_candidate_selected_background);
+          //Tempest
+//          ContextCompat.getDrawable(context, R.drawable.dark_candidate_selected_background);
+          ContextCompat.getDrawable(context, R.drawable.tempest_candidate_selected_background);
     }
     mPaint.setColor(mThemeOverlayCombiner.getThemeResources().getKeyTextColor().getDefaultColor());
     mPaint.setAntiAlias(true);

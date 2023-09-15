@@ -506,6 +506,8 @@ public abstract class AnySoftKeyboardSuggestions extends AnySoftKeyboardKeyboard
   public View onCreateInputView() {
     final View view = super.onCreateInputView();
     mCandidateView = getInputViewContainer().getCandidateView();
+    //Tempest
+    hideCandidateSection();
     mCandidateView.setService(this);
     mCancelSuggestionsAction.setOwningCandidateView(mCandidateView);
     return view;
@@ -519,6 +521,8 @@ public abstract class AnySoftKeyboardSuggestions extends AnySoftKeyboardKeyboard
   @CallSuper
   public void onKey(
       int primaryCode, Keyboard.Key key, int multiTapIndex, int[] nearByKeyCodes, boolean fromUI) {
+      //Tempest
+      hideCandidateSection();
     mLastKey = key;
     mLastPrimaryKey = primaryCode;
     super.onKey(primaryCode, key, multiTapIndex, nearByKeyCodes, fromUI);
@@ -1429,4 +1433,20 @@ public abstract class AnySoftKeyboardSuggestions extends AnySoftKeyboardKeyboard
       }
     }
   }
+
+  /* Added by Tempest */
+
+  private void hideCandidateSection(){
+    if (mWord.codePointCount() < 1) {
+      mCandidateView.setVisibility(View.GONE);
+      getInputViewContainer().setActionsStripVisibility(false);
+
+    } else {
+      getInputViewContainer().setActionsStripVisibility(true);
+
+      mCandidateView.setVisibility(View.VISIBLE);
+    }
+    mCandidateView.invalidate();
+  }
+  /* Added by Tempest */
 }
