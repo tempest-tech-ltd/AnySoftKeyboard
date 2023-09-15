@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
-    
+
+<!--  Added by Tempest  -->
+    <string name="search">Search</string>
+    <string name="search_hint">Search…</string>
+    <string name="cancel">Cancel</string>
+
+<!--  Added by Tempest  -->
 
     <string name="debug_tracing_starting">Tracing started!\nMake sure you stop it at some point
     </string>
@@ -472,7 +478,7 @@
 
     <!-- settings - keyboard group -->
     <string name="keyboards_group">Keyboards</string>
-    <string name="symbols_keyboard">123!#()</string>
+    <string name="symbols_keyboard">123</string>
     <string name="symbols_alt_keyboard">{}\_</string>
     <string name="symbols_alt_num_keyboard">123</string>
     <string name="symbols_phone_keyboard">phone</string>

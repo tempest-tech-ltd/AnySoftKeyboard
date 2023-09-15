@@ -287,7 +287,8 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
 //      getInputViewContainer().addStripAction(mDevToolsAction, false);
 //    }
 
-    getInputViewContainer().addSearchAppIcon(this);
+    getInputViewContainer().addAppBar(this);
+
   }
 
   @Override
@@ -311,8 +312,7 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
 //    if (BuildConfig.DEBUG) {
 //      getInputViewContainer().removeStripAction(mDevToolsAction);
 //    }
-    getInputViewContainer().removeSearchView();
-    getInputViewContainer().removeSearchIcon();
+    getInputViewContainer().removeAppBar();
 
   }
 

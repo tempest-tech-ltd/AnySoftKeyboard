@@ -1,15 +1,12 @@
 package com.anysoftkeyboard.keyboards.views;
 
-import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -18,14 +15,12 @@ import com.anysoftkeyboard.ime.InputViewActionsProvider;
 import com.anysoftkeyboard.ime.InputViewBinder;
 import com.anysoftkeyboard.overlay.OverlayData;
 import com.anysoftkeyboard.theme.KeyboardTheme;
-import com.anysoftkeyboard.ui.dev.SearchAppActionProvider;
 import com.menny.android.anysoftkeyboard.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import appstudio.appbar.SearchBarView;
-import appstudio.search.SearchBarActivity;
+import appstudio.appbar.AppBarView;
 
 public class KeyboardViewContainerView extends ViewGroup implements ThemeableChild {
 
@@ -45,9 +40,7 @@ public class KeyboardViewContainerView extends ViewGroup implements ThemeableChi
   /**
    * Added by Tempest
    **/
-  private SearchBarView mSearchView;
-  public View mSearchIconView;
-  public boolean mShowSearch = false;
+  private AppBarView mAppBarView;
 
   /**
    * Added by Tempest
@@ -120,66 +113,30 @@ public class KeyboardViewContainerView extends ViewGroup implements ThemeableChi
   /**
    * Added by Tempest
    **/
-  public void setSearchVisibility(boolean visible) {
-    if (mSearchView != null) {
-      mSearchView.setVisibility(visible ? VISIBLE : GONE);
+  public void setAppBarVisibility(boolean visible) {
+    if (mAppBarView != null) {
+      mAppBarView.setVisibility(visible ? VISIBLE : GONE);
       invalidate();
     }
   }
 
-  public void setSearchIconVisibility(boolean visible) {
-    if (mSearchIconView != null) {
-      mShowSearch = visible;
-      mSearchIconView.setVisibility(visible ? VISIBLE : GONE);
+  public void addAppBar(Context context) {
+    if (mAppBarView == null) {
+      mAppBarView = new AppBarView(context, null);
+      int pos = mCandidateView.getVisibility() == VISIBLE ? 1 : 0;
+      addView(mAppBarView, pos);
       invalidate();
     }
   }
 
-  public void addSearchAppIcon(Context context) {
-    SearchAppActionProvider provider = new SearchAppActionProvider(context);
-
-    mSearchIconView = provider.inflateActionView(this);
-    mSearchIconView.setOnClickListener(v -> {
-      startSearchActivity(context);
-    });
-    addView(mSearchIconView, 0);
-    invalidate();
+  public AppBarView getAppBar() {
+    return mAppBarView;
   }
 
-  private void startSearchActivity(Context context) {
-
-    Intent intent = new Intent(context, SearchBarActivity.class);
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
-    try {
-      context.startActivity(intent);
-    } catch (ActivityNotFoundException e) {
-      Toast.makeText(context, "Unable to open browser", Toast.LENGTH_SHORT).show();
-    }
-  }
-
-  public SearchBarView getSearchView(Context context) {
-    return mSearchView;
-  }
-
-  public void addSearchView(Context context) {
-    mSearchView = new SearchBarView(context, null);
-    addView(mSearchView, 0);
-    invalidate();
-  }
-
-  public void removeSearchView() {
-    if (mSearchView != null) {
-      removeView(mSearchView);
-      mSearchView.onAppClosed();
-      mSearchView = null;
-      invalidate();
-    }
-  }
-
-  public void removeSearchIcon() {
-    if (mSearchIconView != null) {
-      removeView(mSearchIconView);
-      mSearchIconView = null;
+  public void removeAppBar() {
+    if (mAppBarView != null) {
+      removeView(mAppBarView);
+      mAppBarView = null;
       invalidate();
     }
   }

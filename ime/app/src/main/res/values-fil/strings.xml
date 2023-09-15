@@ -275,7 +275,7 @@
     <string name="allow_suggestions_restart_summary">Restart na salita ay magmumungkahi sa paggalaw ng cursor</string>
     <!-- settings - keyboard group -->
     <string name="keyboards_group">Mga keyboards</string>
-    <string name="symbols_keyboard">123!#()</string>
+    <string name="symbols_keyboard">123</string>
     <string name="symbols_alt_keyboard">{}\_</string>
     <string name="symbols_alt_num_keyboard">123</string>
     <string name="symbols_phone_keyboard">telepono</string>

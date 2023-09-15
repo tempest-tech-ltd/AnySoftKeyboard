@@ -6,7 +6,7 @@
     <!-- Action key -->
 
     <item ask:key_type_action="true" android:state_pressed="true"
-          android:drawable="@drawable/light_btn_key_action_pressed"/>
+          android:drawable="@drawable/tempest_btn_key_action_pressed"/>
     <item ask:key_type_action="true"
           android:drawable="@drawable/tempest_btn_key_action"/>
 
@@ -30,6 +30,6 @@
 
     <!-- Normal keys -->
     <item android:state_pressed="true"
-          android:drawable="@drawable/light_btn_key_normal_pressed"/>
+          android:drawable="@drawable/tempest_btn_key_normal_pressed"/>
     <item android:drawable="@drawable/key_bg"/>
 </selector>

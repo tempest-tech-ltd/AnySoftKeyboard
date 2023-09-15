@@ -59,6 +59,18 @@
 
         </FrameLayout>
 
+        <!--      Added By Tempest      -->
+
+        <appstudio.appbar.search.SearchBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <appstudio.appbar.AppBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!--      Added By Tempest      -->
+
         <!-- this box will be should shown
          only if the build type is not release -->
         <androidx.cardview.widget.CardView
