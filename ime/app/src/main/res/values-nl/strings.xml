@@ -347,7 +347,7 @@ woordenlijst
     <string name="allow_suggestions_restart_summary">Herstart woordsuggesties bij cursorverplaatsing</string>
     <!-- settings - keyboard group -->
     <string name="keyboards_group">Toetsenborden</string>
-    <string name="symbols_keyboard">123!#()</string>
+    <string name="symbols_keyboard">123</string>
     <string name="symbols_alt_keyboard">{}\_</string>
     <string name="symbols_alt_num_keyboard">123</string>
     <string name="symbols_phone_keyboard">telefoon</string>

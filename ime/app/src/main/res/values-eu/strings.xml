@@ -339,7 +339,7 @@
     <string name="allow_suggestions_restart_summary">Berrasi hitzen proposamena kurtsorea mugitzean</string>
     <!-- settings - keyboard group -->
     <string name="keyboards_group">Teklatuak</string>
-    <string name="symbols_keyboard">123!#()</string>
+    <string name="symbols_keyboard">123</string>
     <string name="symbols_alt_keyboard">{}\_</string>
     <string name="symbols_alt_num_keyboard">123</string>
     <string name="symbols_phone_keyboard">telefonoa</string>

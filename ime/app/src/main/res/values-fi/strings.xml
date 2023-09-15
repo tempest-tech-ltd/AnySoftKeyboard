@@ -311,7 +311,7 @@
     <string name="allow_suggestions_restart_summary">Nollaa ehdotukset, kun kohdistinta liikutetaan</string>
     <!-- settings - keyboard group -->
     <string name="keyboards_group">Näppäimistöt</string>
-    <string name="symbols_keyboard">123!#()</string>
+    <string name="symbols_keyboard">123</string>
     <string name="symbols_alt_keyboard">{}\_</string>
     <string name="symbols_alt_num_keyboard">123</string>
     <string name="symbols_phone_keyboard">puhelin</string>

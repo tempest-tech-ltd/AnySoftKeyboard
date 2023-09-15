@@ -344,7 +344,7 @@ bulamıyorum. Bu özellik cihazınızda çalışamaz, üzgünüz.</string>
     <string name="allow_suggestions_restart_summary">Imleç hareketinden sonra kelime önermeyi yeniden başlat</string>
     <!-- settings - keyboard group -->
     <string name="keyboards_group">Klavyeler</string>
-    <string name="symbols_keyboard">123!#()</string>
+    <string name="symbols_keyboard">123</string>
     <string name="symbols_alt_keyboard">{}\_</string>
     <string name="symbols_alt_num_keyboard">123</string>
     <string name="symbols_phone_keyboard">telefon</string>
